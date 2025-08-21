@@ -8,6 +8,7 @@
         height: `${centerSize}px`,
         backgroundColor: centerBgColor
       }"
+      @click="handleCenterClick"
       @mouseenter="centerHovered = true"
       @mouseleave="centerHovered = false"
     >
@@ -91,6 +92,8 @@ const props = withDefaults(defineProps<{
   showConnectorLines?: boolean
   pulseSpeed?: number
   rotationSpeed?: number
+  centerClickable?: boolean
+  onCenterClick?: () => void
 }>(), {
   centerText: 'Center',
   centerAltText: 'Central bubble',
@@ -102,11 +105,13 @@ const props = withDefaults(defineProps<{
   maxRadius: 200,
   showConnectorLines: true,
   pulseSpeed: 0.5,
-  rotationSpeed: 0.2
+  rotationSpeed: 0.2,
+  centerClickable: true
 })
 
 const emit = defineEmits<{
   (e: 'bubble-click', bubble: TextBubble): void
+  (e: 'center-click'): void
 }>()
 
 const centerHovered = ref(false)
@@ -196,6 +201,17 @@ const handleBubbleClick = (bubble: TextBubble, index: number) => {
       isAnimating.value = true
       animationId.value = requestAnimationFrame(updateAnimation)
     }
+  }
+}
+
+const handleCenterClick = () => {
+  if (props.centerClickable) {
+    emit('center-click')
+    props.onCenterClick?.()
+
+    // currentRadius.value = props.maxRadius
+    // isPulsingIn.value = true
+    // animationKey.value++
   }
 }
 

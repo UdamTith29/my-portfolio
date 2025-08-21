@@ -1,7 +1,6 @@
 <template>
   <div 
     ref="bubbleRef"
-    class="relative rounded-full flex items-center justify-center overflow-hidden transition-all duration-300"
     :class="[
       bubbleClasses,
       hoverEffect ? 'hover:scale-105 hover:shadow-xl' : '',
@@ -16,6 +15,7 @@
       border: `${borderWidth}px solid ${borderColor}`,
       ...customStyles
     }"
+    class="relative rounded-full flex items-center justify-center overflow-hidden transition-all duration-300"
     @mouseenter="handleMouseEnter"
     @mouseleave="handleMouseLeave"
     @click="handleClick"
@@ -25,19 +25,19 @@
       v-if="imageSrc"
       :src="imageSrc"
       :alt="altText"
-      class="w-full h-full object-cover"
       :class="imageClasses"
+      class="w-full h-full object-cover"
     />
     
     <!-- Text Content -->
     <div 
       v-else-if="text"
-      class="text-center p-4"
       :class="{
         'font-bold': boldText,
         'italic': italicText,
         'uppercase': uppercaseText
       }"
+      class="text-center p-4"
     >
       {{ text }}
     </div>
@@ -45,8 +45,8 @@
     <!-- Icon Content -->
     <div 
       v-else-if="icon"
-      class="text-3xl"
       :class="icon"
+      class="text-3xl"
     />
     
     <!-- Default Slot Content -->
@@ -55,8 +55,8 @@
     <!-- Hover Overlay -->
     <div 
       v-if="showOverlay && isHovered"
-      class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center text-white"
       :class="overlayClasses"
+      class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center text-white"
     >
       <slot name="hover-content">
         <span v-if="hoverText">{{ hoverText }}</span>

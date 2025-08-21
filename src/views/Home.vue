@@ -3,7 +3,7 @@
     <Navbar />
     
     <main class="container mx-auto py-12 px-4">
-      <h1 class="text-6xl text-gray-800 font-bold mb-6">FRONTEND DEVELOPER</h1>
+      <h1 class="text-6xl text-gray-800 font-bold mb-6">WEB DEVELOPER</h1>
       
       <div class="sm:flex sm:space-y-5">
         <div>

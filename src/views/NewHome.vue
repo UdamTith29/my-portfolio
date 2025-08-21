@@ -8,6 +8,7 @@
       :animation-speed="30"
       :restart-animation-on-click="true"
       @bubble-click="handleBubbleClick"
+      @center-click="handleImageClick"
     />
 
     <!-- Popup Sections -->
@@ -103,9 +104,12 @@ const textBubbles = [
   }
 ]
 
+const handleImageClick = () => {
+  router.push('/about-me')
+}
+
 const handleBubbleClick = (bubble) => {
   selectedBubble.value = bubble
-  console.log('Bubble clicked:', bubble.text)
 }
 const handleBubbleClick1 = (bubble: { text: string }) => {
   switch (bubble.text) {
