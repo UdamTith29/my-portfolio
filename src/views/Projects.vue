@@ -66,6 +66,6 @@ const projects = [
     category: "Personal Project",
     description: "Interactive portfolio website with animated elements.",
     technologies: ["Vue.js", "GSAP", "Tailwind CSS"]
-  }
+  },
 ]
 </script>

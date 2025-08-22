@@ -12,12 +12,12 @@
           
           <!-- Timeline Items -->
           <div v-for="(item, index) in timeline" :key="index" 
-               :class="['mb-8 flex flex-col md:flex-row items-center', index % 2 === 0 ? 'md:flex-row-reverse' : '']">
+               :class="['mb-8 flex flex-col md:flex-row items-center', !item.experience ? 'md:flex-row-reverse' : '']">
             <div class="md:w-1/2"></div>
             <div class="z-10 flex items-center justify-center w-8 h-8 bg-purple-600 rounded-full">
               <div class="w-4 h-4 bg-white rounded-full"></div>
             </div>
-            <div :class="['md:w-1/2 p-6 rounded-xl shadow-md', index % 2 === 0 ? 'md:pr-8' : 'md:pl-8']">
+            <div :class="['md:w-1/2 p-6 rounded-xl shadow-md', item.experience ? 'md:pr-8' : 'md:pl-8']">
               <span class="text-purple-600 font-semibold">{{ item.period }}</span>
               <h3 class="text-xl font-bold text-gray-800 mt-2">{{ item.title }}</h3>
               <p class="text-purple-700 font-medium">{{ item.institution }}</p>
@@ -35,22 +35,30 @@ import Navbar from './Navbar.vue';
 
 const timeline = [
   {
-    period: "2020 - Present",
-    title: "Senior Web Developer",
-    institution: "Tech Innovations Inc.",
-    description: "Leading frontend development team and implementing modern web solutions."
+    experience: true,
+    period: "AUG 2025 - Present",
+    title: "Business Development Officer",
+    institution: "DRSB Express",
+    description: "Supporting sale team to reach the target."
   },
   {
-    period: "2018 - 2020",
+    experience: true,
+    period: "JAN 2025 - JUN 2025",
     title: "Web Developer",
-    institution: "Digital Solutions Co.",
+    institution: "EZZE Technology",
     description: "Developed and maintained client websites and web applications."
   },
   {
-    period: "2014 - 2018",
-    title: "Bachelor in Computer Science",
-    institution: "University of Technology",
+    period: "2020 - 2024",
+    title: "Bachelor in Software Engineering",
+    institution: "Harbin Institute of Technology (HIT)",
     description: "Graduated with honors. Specialized in web technologies and software engineering."
+  },
+  {
+    period: "2019 - 2020",
+    title: "Chinese Language (HSK 4)",
+    institution: "Northeast Normal University (NENU)",
+    description: "Graduated with honors. Specialized in Mandarin Chinese."
   }
 ]
 </script>

@@ -5,19 +5,19 @@ const skillCategories = [
   {
     name: "Frontend",
     skills: [
-      { name: "Vue.js", percentage: 90, color: "bg-green-500" },
-      { name: "React", percentage: 85, color: "bg-blue-500" },
-      { name: "JavaScript", percentage: 95, color: "bg-yellow-500" },
-      { name: "HTML/CSS", percentage: 98, color: "bg-red-500" }
+      { name: "Vue.js", percentage: 60, color: "bg-green-500" },
+      { name: "React", percentage: 5, color: "bg-blue-500" },
+      { name: "JavaScript", percentage: 70, color: "bg-yellow-500" },
+      { name: "HTML/CSS", percentage: 80, color: "bg-red-500" }
     ]
   },
   {
     name: "Backend",
     skills: [
-      { name: "Node.js", percentage: 88, color: "bg-green-600" },
-      { name: "Python", percentage: 82, color: "bg-blue-600" },
-      { name: "PHP", percentage: 75, color: "bg-purple-600" },
-      { name: "Database", percentage: 90, color: "bg-indigo-600" }
+      { name: "Node.js", percentage: 5, color: "bg-green-600" },
+      { name: "Python", percentage: 40, color: "bg-blue-600" },
+      { name: "PHP", percentage: 5, color: "bg-purple-600" },
+      { name: "Database", percentage: 60, color: "bg-indigo-600" }
     ]
   }
 ]
